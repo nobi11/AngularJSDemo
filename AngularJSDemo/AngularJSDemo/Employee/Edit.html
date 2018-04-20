@@ -1,0 +1,88 @@
+﻿<div class="panel panel-primary">
+
+    <div class="panel-heading">Edit Employee</div>
+    <div class="panel-body">
+
+        <form class="form-horizontal" role="form" id="Edit" name="Edit">
+            <strong class="error">{{ error }}</strong>
+
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">First Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" id="firstname" name="firstname" class="form-control"
+                           ng-model="firstname" ng-required="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">Last Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" id="lastname" name="lastname" class="form-control"
+                           ng-model="lastname" ng-required="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="country" class="col-sm-2 control-label">Country:</label>
+                <div class="col-sm-4">
+                    <select class="form-control" id="country" ng-model="country" ng-options="c.Value as c.Text for c in countries" ng-change="getStates()">
+                        <option value="">-- Select Country --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="state" class="col-sm-2 control-label">State:</label>
+                <div class="col-sm-4">
+                    <select class="form-control" id="state" ng-model="state" ng-disabled="!states" ng-options="s.Value as s.Text for s in states">
+                        <option value="">-- Select State --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="salary" class="col-sm-2 control-label">Current Salary:</label>
+                <div class="col-sm-4">
+                    <input type="text" id="salary" name="salary" class="form-control"
+                           ng-model="salary" ng-required="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dob" class="col-sm-2 control-label">Date of Birth:</label>
+                <div class="col-sm-4">
+                    <input type="date" id="dob" name="dob" class="form-control"
+                           ng-model="dob" ng-required="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Description:</label>
+                <div class="col-sm-4">
+                    <input type="text" id="description" name="description" class="form-control"
+                           ng-model="description" ng-required="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="active" class="col-sm-2 control-label">Active:</label>
+                <div class="col-sm-1">
+                    <input type="checkbox" id="active" name="active" class="checkbox"
+                           ng-model="active" ng-required="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-3 col-sm-3 col-sm-offset-3 ">
+                    <a class="btn btn-warning" href="#/list">
+                        <i class="glyphicon glyphicon-remove-sign"></i> Cancel
+                    </a>
+
+                    <button type="submit" class="btn btn-primary" ng-click="save()">
+                        <i class="glyphicon glyphicon-save"></i> Save
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
